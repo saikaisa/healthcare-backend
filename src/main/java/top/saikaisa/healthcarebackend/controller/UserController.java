@@ -17,7 +17,7 @@ import static top.saikaisa.healthcarebackend.constant.UserConstant.USER_LOGIN_ST
  * @createDate 2023-12-25 17:09:45
  */
 @RestController     // 适用于编写 restful 风格的 api，返回值默认为 json 类型
-@CrossOrigin(origins = "*")     // 允许跨域
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")     // 允许跨域
 @RequestMapping("/user")
 public class UserController {
     @Resource
@@ -76,6 +76,19 @@ public class UserController {
             return -1;
         }
         return userService.userLogout(request);
+    }
+
+    /**
+     * 判断用户是否登录
+     * @param request 请求
+     * @return true：已登录，false：未登录
+     */
+    @GetMapping("/loginstate")
+    public boolean userLoginState(HttpServletRequest request) {
+        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
+        User currentUser = (User) userObj;
+        // 判断 session 缓存里的用户是否为空
+        return currentUser != null;
     }
 
     /**

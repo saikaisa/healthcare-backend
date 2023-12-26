@@ -139,7 +139,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             return null;
         }
         User safetyUser = new User();
-        BeanUtils.copyProperties(safetyUser, originUser);
+        BeanUtils.copyProperties(originUser, safetyUser);
         safetyUser.setPassword(null);
         safetyUser.setIsDeleted(null);
 

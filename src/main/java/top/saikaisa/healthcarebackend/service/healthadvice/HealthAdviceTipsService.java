@@ -1,4 +1,4 @@
-package top.saikaisa.healthcarebackend.service.advice;
+package top.saikaisa.healthcarebackend.service.healthadvice;
 
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceTips;
 import com.baomidou.mybatisplus.extension.service.IService;

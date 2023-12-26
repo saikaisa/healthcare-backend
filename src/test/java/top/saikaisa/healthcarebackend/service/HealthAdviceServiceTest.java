@@ -12,7 +12,7 @@ import top.saikaisa.healthcarebackend.model.HealthAdvice;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceArticles;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceQa;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceTips;
-import top.saikaisa.healthcarebackend.service.advice.HealthAdviceArticlesService;
+import top.saikaisa.healthcarebackend.service.healthadvice.HealthAdviceArticlesService;
 
 @SpringBootTest
 public class HealthAdviceServiceTest {

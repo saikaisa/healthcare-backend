@@ -3,7 +3,7 @@ package top.saikaisa.healthcarebackend.service.impl.healthadvice;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceQa;
-import top.saikaisa.healthcarebackend.service.advice.HealthAdviceQaService;
+import top.saikaisa.healthcarebackend.service.healthadvice.HealthAdviceQaService;
 import top.saikaisa.healthcarebackend.mapper.HealthAdviceQaMapper;
 import org.springframework.stereotype.Service;
 

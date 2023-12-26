@@ -7,9 +7,9 @@ import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceArticles;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceQa;
 import top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceTips;
 import top.saikaisa.healthcarebackend.service.HealthAdviceService;
-import top.saikaisa.healthcarebackend.service.advice.HealthAdviceArticlesService;
-import top.saikaisa.healthcarebackend.service.advice.HealthAdviceQaService;
-import top.saikaisa.healthcarebackend.service.advice.HealthAdviceTipsService;
+import top.saikaisa.healthcarebackend.service.healthadvice.HealthAdviceArticlesService;
+import top.saikaisa.healthcarebackend.service.healthadvice.HealthAdviceQaService;
+import top.saikaisa.healthcarebackend.service.healthadvice.HealthAdviceTipsService;
 
 import java.util.List;
 

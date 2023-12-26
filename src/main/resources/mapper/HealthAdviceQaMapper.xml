@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.saikaisa.healthcarebackend.mapper.HealthAdviceQaMapper">
+
+    <resultMap id="BaseResultMap" type="top.saikaisa.healthcarebackend.model.healthadvice.HealthAdviceQa">
+            <id property="qaId" column="qa_id" jdbcType="INTEGER"/>
+            <result property="question" column="question" jdbcType="VARCHAR"/>
+            <result property="answer" column="answer" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        qa_id,question,answer
+    </sql>
+</mapper>

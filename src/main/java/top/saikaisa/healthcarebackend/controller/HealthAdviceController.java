@@ -11,7 +11,6 @@ import top.saikaisa.healthcarebackend.service.HealthAdviceService;
  * @createDate 2023-12-26 17:16:23
  */
 @RestController     // 适用于编写 restful 风格的 api，返回值默认为 json 类型
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")     // 允许跨域
 @RequestMapping("/advice")
 public class HealthAdviceController {
     @Resource
@@ -24,8 +23,8 @@ public class HealthAdviceController {
     @GetMapping("/get")
     public HealthAdvice getRandomAdvice() {
         int articlesNum = 5;
-        int qaNum = 2;
-        int tipsNum = 6;
+        int qaNum = 4;
+        int tipsNum = 10;
         return healthAdviceService.getHealthAdvice(articlesNum, qaNum, tipsNum);
     }
 }

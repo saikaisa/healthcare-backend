@@ -17,7 +17,6 @@ import static top.saikaisa.healthcarebackend.constant.UserConstant.USER_LOGIN_ST
  * @createDate 2023-12-25 17:09:45
  */
 @RestController     // 适用于编写 restful 风格的 api，返回值默认为 json 类型
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")     // 允许跨域
 @RequestMapping("/user")
 public class UserController {
     @Resource

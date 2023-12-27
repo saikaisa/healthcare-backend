@@ -82,7 +82,7 @@ public class User implements Serializable {
     /**
      * 血压，单位：mmHg
      */
-    private Integer bloodPressure;
+    private String bloodPressure;
 
     /**
      * 创建时间
@@ -116,22 +116,22 @@ public class User implements Serializable {
         }
         User other = (User) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getAvatarUrl() == null ? other.getAvatarUrl() == null : this.getAvatarUrl().equals(other.getAvatarUrl()))
-            && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()))
-            && (this.getSteps() == null ? other.getSteps() == null : this.getSteps().equals(other.getSteps()))
-            && (this.getCalories() == null ? other.getCalories() == null : this.getCalories().equals(other.getCalories()))
-            && (this.getExerciseTime() == null ? other.getExerciseTime() == null : this.getExerciseTime().equals(other.getExerciseTime()))
-            && (this.getSleepDuration() == null ? other.getSleepDuration() == null : this.getSleepDuration().equals(other.getSleepDuration()))
-            && (this.getSleepStartTime() == null ? other.getSleepStartTime() == null : this.getSleepStartTime().equals(other.getSleepStartTime()))
-            && (this.getSleepEndTime() == null ? other.getSleepEndTime() == null : this.getSleepEndTime().equals(other.getSleepEndTime()))
-            && (this.getHeartRate() == null ? other.getHeartRate() == null : this.getHeartRate().equals(other.getHeartRate()))
-            && (this.getBloodOxygen() == null ? other.getBloodOxygen() == null : this.getBloodOxygen().equals(other.getBloodOxygen()))
-            && (this.getBloodPressure() == null ? other.getBloodPressure() == null : this.getBloodPressure().equals(other.getBloodPressure()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
-            && (this.getIsDeleted() == null ? other.getIsDeleted() == null : this.getIsDeleted().equals(other.getIsDeleted()));
+                && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+                && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+                && (this.getAvatarUrl() == null ? other.getAvatarUrl() == null : this.getAvatarUrl().equals(other.getAvatarUrl()))
+                && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()))
+                && (this.getSteps() == null ? other.getSteps() == null : this.getSteps().equals(other.getSteps()))
+                && (this.getCalories() == null ? other.getCalories() == null : this.getCalories().equals(other.getCalories()))
+                && (this.getExerciseTime() == null ? other.getExerciseTime() == null : this.getExerciseTime().equals(other.getExerciseTime()))
+                && (this.getSleepDuration() == null ? other.getSleepDuration() == null : this.getSleepDuration().equals(other.getSleepDuration()))
+                && (this.getSleepStartTime() == null ? other.getSleepStartTime() == null : this.getSleepStartTime().equals(other.getSleepStartTime()))
+                && (this.getSleepEndTime() == null ? other.getSleepEndTime() == null : this.getSleepEndTime().equals(other.getSleepEndTime()))
+                && (this.getHeartRate() == null ? other.getHeartRate() == null : this.getHeartRate().equals(other.getHeartRate()))
+                && (this.getBloodOxygen() == null ? other.getBloodOxygen() == null : this.getBloodOxygen().equals(other.getBloodOxygen()))
+                && (this.getBloodPressure() == null ? other.getBloodPressure() == null : this.getBloodPressure().equals(other.getBloodPressure()))
+                && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+                && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+                && (this.getIsDeleted() == null ? other.getIsDeleted() == null : this.getIsDeleted().equals(other.getIsDeleted()));
     }
 
     @Override

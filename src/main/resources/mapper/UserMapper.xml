@@ -18,7 +18,7 @@
             <result property="sleepEndTime" column="sleep_end_time" jdbcType="TIME"/>
             <result property="heartRate" column="heart_rate" jdbcType="INTEGER"/>
             <result property="bloodOxygen" column="blood_oxygen" jdbcType="INTEGER"/>
-            <result property="bloodPressure" column="blood_pressure" jdbcType="INTEGER"/>
+            <result property="bloodPressure" column="blood_pressure" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>

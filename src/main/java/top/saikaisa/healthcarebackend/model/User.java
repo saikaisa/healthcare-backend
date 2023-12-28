@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import top.saikaisa.healthcarebackend.model.request.UserHealthDataRequest;
 
 /**
  * 用户信息
@@ -92,6 +93,7 @@ public class User implements Serializable {
     /**
      * 更新时间
      */
+    @TableField(update = "now()")
     private Date updateTime;
 
     /**

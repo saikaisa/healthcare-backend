@@ -10,8 +10,13 @@ import org.springframework.util.DigestUtils;
 import top.saikaisa.healthcarebackend.model.User;
 import top.saikaisa.healthcarebackend.mapper.UserMapper;
 import org.springframework.stereotype.Service;
+import top.saikaisa.healthcarebackend.model.request.UserHealthDataRequest;
 import top.saikaisa.healthcarebackend.service.UserService;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.*;
 
 import static top.saikaisa.healthcarebackend.constant.UserConstant.USER_LOGIN_STATE;
@@ -151,6 +156,68 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         // 移除登录态
         request.getSession().removeAttribute(USER_LOGIN_STATE);
         return 0;
+    }
+
+    @Override
+    public int updateUserHealthData(UserHealthDataRequest userHealthDataRequest, int userId) {
+        User user = new User();
+
+        // 处理数据
+        if (StringUtils.isNotBlank(userHealthDataRequest.getSteps())) {
+            user.setSteps(Integer.parseInt(userHealthDataRequest.getSteps()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getCalories())) {
+            user.setCalories(Integer.parseInt(userHealthDataRequest.getCalories()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getExerciseTime())) {
+            user.setExerciseTime(Integer.parseInt(userHealthDataRequest.getExerciseTime()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getSleepDuration())) {
+            user.setSleepDuration(Integer.parseInt(userHealthDataRequest.getSleepDuration()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getSleepStartTime())) {
+            user.setSleepStartTime(stringToDate(userHealthDataRequest.getSleepStartTime()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getSleepEndTime())) {
+            user.setSleepEndTime(stringToDate(userHealthDataRequest.getSleepEndTime()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getHeartRate())) {
+            user.setHeartRate(Integer.parseInt(userHealthDataRequest.getHeartRate()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getBloodOxygen())) {
+            user.setBloodOxygen(Integer.parseInt(userHealthDataRequest.getBloodOxygen()));
+        }
+        if (StringUtils.isNotBlank(userHealthDataRequest.getBloodPressure())) {
+            // 检查血压格式是否为类似于 140/90 这样的格式
+            String bloodPressure = userHealthDataRequest.getBloodPressure();
+            if (!StringUtils.isBlank(bloodPressure)) {
+                if (!bloodPressure.matches("^\\d{2,3}/\\d{2,3}$")) {
+                    return -1;
+                }
+            }
+            user.setBloodPressure(userHealthDataRequest.getBloodPressure());
+        }
+
+        // 更新数据库
+        user.setId(userId);
+        userMapper.updateById(user);
+
+        return 0;
+    }
+
+    // 将字符串 HH:MM 转换为 Time 类型
+    private Time stringToDate(String timeString) {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        try {
+            // 解析时间字符串并转换为 Date 对象
+            Date date = sdf.parse(timeString);
+            // 将 Date 对象转换为 Time 对象
+            Time time = new Time(date.getTime());
+            return time;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 

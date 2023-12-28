@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import top.saikaisa.healthcarebackend.model.User;
+import top.saikaisa.healthcarebackend.model.request.UserHealthDataRequest;
 import top.saikaisa.healthcarebackend.model.request.UserLoginRequest;
 import top.saikaisa.healthcarebackend.model.request.UserRegisterRequest;
 import top.saikaisa.healthcarebackend.service.UserService;
@@ -110,5 +111,43 @@ public class UserController {
         User user = userService.getById(userId);
 
         return userService.getSafetyUser(user);
+    }
+
+    /**
+     * 更新用户信息
+     * @param userHealthDataRequest 用户健康数据
+     * @return 0：更新成功，-1：数据格式错误，-2：用户未登录，-3：其他错误
+     */
+    @PostMapping("/updatehealthdata")
+    public int updateUserHealthData(@RequestBody UserHealthDataRequest userHealthDataRequest, HttpServletRequest request) {
+        // 先检查用户是否登录
+        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
+        User currentUser = (User) userObj;
+        // 判断 session 缓存里的用户是否为空
+        if (currentUser == null) {
+            return -2;
+        }
+        // 判断用户健康数据是否为空
+        if (userHealthDataRequest == null) {
+            return -3;
+        }
+
+        // 检查参数是否全为空（血压处填空格也算空！）
+        if (StringUtils.isAllBlank(userHealthDataRequest.getBloodPressure(),
+                userHealthDataRequest.getSteps(),
+                userHealthDataRequest.getCalories(),
+                userHealthDataRequest.getExerciseTime(),
+                userHealthDataRequest.getSleepDuration(),
+                userHealthDataRequest.getSleepStartTime(),
+                userHealthDataRequest.getSleepEndTime(),
+                userHealthDataRequest.getHeartRate(),
+                userHealthDataRequest.getBloodOxygen())) {
+            return -1;
+        }
+
+        // 得到当前用户的 id
+        int userId = currentUser.getId();
+
+        return userService.updateUserHealthData(userHealthDataRequest, userId);
     }
 }

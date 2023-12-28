@@ -3,6 +3,7 @@ package top.saikaisa.healthcarebackend.service;
 import jakarta.servlet.http.HttpServletRequest;
 import top.saikaisa.healthcarebackend.model.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.saikaisa.healthcarebackend.model.request.UserHealthDataRequest;
 
 /**
 * @author Saikai
@@ -41,4 +42,6 @@ public interface UserService extends IService<User> {
      * @return 0
      */
     int userLogout(HttpServletRequest request);
+
+    int updateUserHealthData(UserHealthDataRequest userHealthDataRequest, int userId);
 }

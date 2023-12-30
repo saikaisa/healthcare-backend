@@ -45,12 +45,12 @@
 │   │   │       	│   ├── HealthAdviceQaService.java
 │   │   │       	│   └── HealthAdviceTipsService.java
 │   │   │       	└── impl	# 服务实现
-│   │   │           	├── HealthAdviceServiceImpl.java	# 健康建议服务封装实现
-│   │   │           	├── UserServiceImpl.java	# 用户服务实现
-│   │   │           	└── healthadvice	# 各健康建议服务实现
-│   │   │               	├── HealthAdviceArticlesServiceImpl.java
-│   │   │               	├── HealthAdviceQaServiceImpl.java
-│   │   │               	└── HealthAdviceTipsServiceImpl.java
+│   │   │               ├── HealthAdviceServiceImpl.java	# 健康建议服务封装实现
+│   │   │               ├── UserServiceImpl.java	# 用户服务实现
+│   │   │               └── healthadvice	# 各健康建议服务实现
+│   │   │                   ├── HealthAdviceArticlesServiceImpl.java
+│   │   │                   ├── HealthAdviceQaServiceImpl.java
+│   │   │                   └── HealthAdviceTipsServiceImpl.java
 │   │   └── resources  # 资源文件
 │   │       ├── application.yml  # SpringBoot 配置文件
 │   │       └── mapper  # MyBatis映射器XML文件

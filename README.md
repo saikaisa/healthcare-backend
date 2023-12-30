@@ -1,4 +1,4 @@
-# HealthCare 后端项目
+# 健康管理中心（暂定名称）
 
 本仓库是 HealthCare 的后端项目，基于 SpringBoot，是人机交互技术课程的小组课程设计。
 
@@ -117,4 +117,4 @@ mvn clean install
 
 直接在 IDEA 内运行项目即可。
 
-请确保前端运行在 http://localhost:3000 上，并且前端配置的后端 api 地址为 http://localhost:8080/api。
+请确保前端运行在 http://localhost:3000 上，并且前端配置的后端 api 地址为 http://localhost:8080/api

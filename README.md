@@ -69,9 +69,9 @@
 ## 本地运行
 
 
-#### 修改文件
+### 修改文件
 
-##### （1）跨域配置
+#### （1）跨域配置
 
 在 `src/main/java/top/saikaisa/healthcarebackend/config` 目录下添加一个配置类，名为 `WebConfig.java`，然后输入以下内容：
 
@@ -96,7 +96,7 @@ public class WebConfig implements WebMvcConfigurer {
 }
 ```
 
-##### （2）端口修改
+#### （2）端口修改
 
 在 `src/main/resources/application.yml` 中修改后端监听的端口号：
 
@@ -105,7 +105,7 @@ server:
   port: 8080
 ```
 
-#### 安装依赖
+### 安装依赖
 
 通常，IDEA 会在项目启动时自动安装依赖，但如果没有安装，请在控制台输入以下命令：
 
@@ -113,7 +113,7 @@ server:
 mvn clean install
 ```
 
-#### 启动后端服务器
+### 启动后端服务器
 
 直接在 IDEA 内运行项目即可。
 

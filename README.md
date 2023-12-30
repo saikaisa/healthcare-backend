@@ -44,7 +44,7 @@
 │   │   │       	│   ├── HealthAdviceArticlesService.java
 │   │   │       	│   ├── HealthAdviceQaService.java
 │   │   │       	│   └── HealthAdviceTipsService.java
-│   │   │       	└── impl	# 服务实现
+│   │   │           └── impl	# 服务实现
 │   │   │               ├── HealthAdviceServiceImpl.java	# 健康建议服务封装实现
 │   │   │               ├── UserServiceImpl.java	# 用户服务实现
 │   │   │               └── healthadvice	# 各健康建议服务实现
